@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="bg">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Документи — ЦПО Европа</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alumni+Sans:wght@400;500;600;700&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<link rel="icon" type="image/x-icon" href="favicon_io/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
+<link rel="manifest" href="favicon_io/site.webmanifest">
+<style>
+  .doc-row{
+    display:grid; grid-template-columns: 50px 1fr auto auto; gap: 20px;
+    align-items: center;
+    padding: 22px 24px;
+    background: var(--bone);
+    border: 1px solid var(--line);
+    border-radius: var(--r-md);
+    margin-bottom: 10px;
+    transition: transform .25s, border-color .25s, background .25s;
+  }
+  .doc-row:hover{ transform: translateX(4px); border-color: var(--brand); background: #fff }
+  .doc-row__icon{
+    width: 44px; height: 44px;
+    border-radius: 10px;
+    background: var(--mint);
+    display:flex; align-items:center; justify-content:center;
+    color: var(--ink);
+  }
+  .doc-row__title{
+    font-family:'Alumni Sans', sans-serif;
+    font-weight: 600; font-size: 22px;
+    text-transform: uppercase; letter-spacing: -.005em;
+    color: var(--ink); line-height: 1.05;
+  }
+  .doc-row__title small{
+    display:block;
+    font-family:'Manrope', sans-serif;
+    font-size: 13px; font-weight: 400;
+    text-transform: none; letter-spacing: 0;
+    color: var(--muted); margin-top: 4px;
+    max-width: 480px;
+  }
+  .doc-row__meta{
+    font-family:'JetBrains Mono', monospace;
+    font-size: 10px; letter-spacing: .14em;
+    text-transform: uppercase; color: var(--muted);
+  }
+  .doc-row__cta{
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    border: 1px solid var(--line-strong);
+    display:flex; align-items:center; justify-content:center;
+    color: var(--ink);
+    transition: background .25s, color .25s, border-color .25s, transform .25s;
+  }
+  .doc-row:hover .doc-row__cta{ background: var(--ink); color: #fff; border-color: var(--ink) }
+  @media (max-width: 720px){
+    .doc-row{ grid-template-columns: 50px 1fr auto; padding: 18px }
+    .doc-row__meta{ display: none }
+  }
+  .legal{ padding: clamp(32px, 4vw, 56px) 0; border-top: 1px solid var(--line); scroll-margin-top: calc(var(--nav-h) + 24px) }
+  .legal:first-of-type{ border-top: none; padding-top: 8px }
+  .legal h2{ margin-bottom: 18px; font-size: clamp(28px, 3vw, 40px) }
+  .legal p{ color: var(--muted); font-size: 15px; line-height: 1.7; max-width: 760px }
+  .legal p + p{ margin-top: 14px }
+</style>
+</head>
+<body>
+
+<div id="site-nav"></div>
+
+<section class="page-head" data-screen-label="01 Documents Head">
+  <span class="page-head__decor" aria-hidden="true"></span>
+  <div class="wrap">
+    <div style="text-align: center; max-width: 760px; margin: 0 auto;" class="r" data-d="1">
+      <h1 style="white-space: nowrap;">Полезни <em class="accent">документи</em>.</h1>
+      <p class="lead" style="margin-top: 24px; text-align: center; margin-left: auto; margin-right: auto; max-width: 760px;">Официални документи, информация за лицензирането, политики за поверителност и полезни връзки към НАПОО.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec-sm" data-screen-label="02 Documents List">
+  <div class="wrap">
+    <span class="eyebrow r">Списък документи</span>
+    <h2 style="margin-top:14px; margin-bottom: 32px" class="r" data-d="1">Документи и <em class="accent">образци</em>.</h2>
+
+    <div>
+      <a href="#" class="doc-row r">
+        <div class="doc-row__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l9 4-9 4-9-4 9-4z"/><path d="M3 10v6l9 4 9-4v-6"/></svg></div>
+        <div class="doc-row__title">Информация за лицензията<small>Статус на лицензиране на ЦПО към НАПОО.</small></div>
+        <div class="doc-row__meta">PDF · 240KB</div>
+        <div class="doc-row__cta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v14M5 10l7 7 7-7M3 21h18"/></svg></div>
+      </a>
+      <a href="#" class="doc-row r" data-d="1">
+        <div class="doc-row__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h12l4 4v12H4z"/><path d="M14 4v6h6"/><path d="M8 12h8M8 15h6M8 18h4"/></svg></div>
+        <div class="doc-row__title">Правилник за устройство и дейност<small>Вътрешен правилник на Центъра за професионално обучение.</small></div>
+        <div class="doc-row__meta">PDF · 380KB</div>
+        <div class="doc-row__cta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v14M5 10l7 7 7-7M3 21h18"/></svg></div>
+      </a>
+      <a href="#" class="doc-row r" data-d="2">
+        <div class="doc-row__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 9h18M7 14h4"/></svg></div>
+        <div class="doc-row__title">Образец на заявление за прием<small>Бланка за кандидатстване за обучение.</small></div>
+        <div class="doc-row__meta">DOCX · 60KB</div>
+        <div class="doc-row__cta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v14M5 10l7 7 7-7M3 21h18"/></svg></div>
+      </a>
+      <a href="https://www.navet.government.bg/" class="doc-row r">
+        <div class="doc-row__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4h6v6"/><path d="M10 14L21 3"/><path d="M21 14v6a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h6"/></svg></div>
+        <div class="doc-row__title">НАПОО — информационна система<small>Национална агенция за професионално образование и обучение.</small></div>
+        <div class="doc-row__meta">Външна връзка</div>
+        <div class="doc-row__cta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="sec" style="background: var(--bone)" data-screen-label="03 Legal">
+  <div class="wrap">
+    <article class="legal r" id="poveritelnost">
+      <span class="mono" style="color: var(--brand-deep)">Документ · A</span>
+      <h2>Политика за защита на <em class="accent">личните данни</em>.</h2>
+      <p>
+        ЦПО Европа събира и обработва лични данни на кандидати за обучение, обучаеми, преподаватели и партньори в съответствие с Регламент (ЕС) 2016/679 (GDPR) и Закона за защита на личните данни.
+      </p>
+      <p>
+        Личните данни се събират и обработват само за конкретни, ясно определени и законни цели — организация на обучението, водене на учебна документация, удостоверяване на придобита квалификация и комуникация с обучаемите и работодателите.
+      </p>
+      <p>
+        Подробна информация за обработваните категории данни, правното основание, сроковете на съхранение и правата на субектите се предоставя в пълния текст на Политиката за защита на личните данни на ЦПО.
+      </p>
+    </article>
+
+    <article class="legal r" data-d="1" id="biskvitki">
+      <span class="mono" style="color: var(--brand-deep)">Документ · B</span>
+      <h2>Политика за <em class="accent">бисквитки</em>.</h2>
+      <p>
+        Сайтът на ЦПО Европа използва бисквитки за осигуряване на правилното функциониране на страниците, запомняне на потребителски предпочитания и анонимизирана статистика за посещаемостта.
+      </p>
+      <p>
+        Потребителите могат да управляват настройките за бисквитки чрез настройките на своя браузър или чрез централизирания инструмент за управление на бисквитки на сайта.
+      </p>
+    </article>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+<script>window.SITE_BASE = './';</script>
+<script src="assets/site.js"></script>
+</body>
+</html>

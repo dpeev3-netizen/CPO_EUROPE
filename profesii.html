@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="bg">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Професии и специалности — ЦПО Европа</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alumni+Sans:wght@400;500;600;700&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<link rel="icon" type="image/x-icon" href="favicon_io/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
+<link rel="manifest" href="favicon_io/site.webmanifest">
+<style>
+  .prof-grid{ display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px }
+  @media (max-width: 780px){ .prof-grid{ grid-template-columns: 1fr } }
+  .prof-card{
+    display:flex; flex-direction:column;
+    background: var(--bone); border: 1px solid var(--line);
+    border-radius: var(--r-lg); padding: 32px;
+    transition: transform .35s cubic-bezier(.2,.7,.2,1), border-color .25s, background .25s;
+    position: relative; overflow: hidden;
+    min-height: 280px;
+  }
+  .prof-card:hover{ transform: translateY(-3px); border-color: var(--line-strong); background: #fff }
+  .prof-card__top{ display:flex; justify-content: space-between; gap:16px; align-items: flex-start; margin-bottom: 24px }
+  .prof-card__code{
+    font-family:'JetBrains Mono', monospace;
+    font-size: 11px; letter-spacing: .14em; color: var(--muted);
+  }
+  .prof-card__code b{ color: var(--brand-deep); font-weight: 500 }
+  .prof-card__spk{
+    font-family:'JetBrains Mono', monospace;
+    font-size: 11px; letter-spacing: .12em; color: var(--ink);
+    font-weight: 500; padding: 6px 12px;
+    background: var(--mint); border-radius: 999px;
+  }
+  .prof-card h3{
+    font-size: clamp(26px, 2.4vw, 36px);
+    margin-bottom: 16px; line-height: 1.02;
+  }
+  .prof-card p{ color: var(--muted); font-size: 14.5px; line-height: 1.6; margin-bottom: 24px }
+  .prof-card__foot{ display:flex; justify-content: space-between; align-items: center; margin-top: auto; gap:16px }
+  .prof-card__dir{ font-size: 12px; color: var(--muted) }
+  .prof-card__cta{
+    display:inline-flex; align-items:center; gap: 8px;
+    color: var(--brand-deep); font-weight: 600; font-size: 14px;
+  }
+  .prof-card__cta .arrow{ transition: transform .3s }
+  .prof-card:hover .prof-card__cta .arrow{ transform: translateX(4px) }
+</style>
+</head>
+<body>
+
+<div id="site-nav"></div>
+
+<section class="page-head" data-screen-label="01 Profesii Head">
+  <span class="page-head__decor" aria-hidden="true"></span>
+  <div class="wrap">
+    <div class="page-head__centered" style="max-width: 1100px; margin: 0 auto; text-align: center; display:flex; flex-direction:column; align-items:center; gap: 16px">
+      <span class="eyebrow r">
+</span>
+      <h1 class="r" data-d="1" style="max-width: 22ch">Десет <em class="accent">професии</em>.</h1>
+      <p class="lead r" data-d="2" style="margin-top: 8px; max-width: 760px">Натиснете върху всяка професия, за да видите кратко представяне, направлението, степента на квалификация и какво включва обучението.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec-sm" data-screen-label="02 Profesii Grid">
+  <div class="wrap">
+    <div class="prof-grid" id="prof-grid"></div>
+  </div>
+</section>
+
+<section class="sec-sm">
+  <div class="wrap">
+    <div class="cta-block r">
+      <div>
+        <span class="eyebrow eyebrow--light">Следваща стъпка</span>
+        <h2 style="margin-top:12px">Готов да започнеш<br/><em>обучение?</em></h2>
+        <p>Изпрати запитване и ще ти изпратим пълна информация за програмата, графика и документите за прием.</p>
+      </div>
+      <div class="cta-block__actions">
+        <a href="kontakti.html#contact-form" class="btn btn--primary">Изпрати запитване <span class="arrow">→</span></a>
+        <a href="obucheniya.html" class="btn btn--ghost-light">Виж филтрирано</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+<script>window.SITE_BASE = './';</script>
+<script src="assets/site.js"></script>
+<script>
+const PROFS = [
+  { slug:'socialni-deynosti',    name:'Социални дейности',                       code:'092302', dirCode:'0923', dir:'Социална работа и консултиране',  spk:'III СПК',  excerpt:'Подготовка за участие в дейности, свързани със социална среда, комуникация, подкрепа и работа с хора.' },
+  { slug:'gotvarstvo',           name:'Готварство',                              code:'101301', dirCode:'1013', dir:'Хотелиерство, ресторантьорство и кетъринг', spk:'I, II СПК', excerpt:'Практически умения за работа в кухненска среда, технологична обработка на продукти и спазване на хигиенни изисквания.' },
+  { slug:'stroitelstvo',         name:'Строителство и архитектура',              code:'073201', dirCode:'0732', dir:'Строителство',                    spk:'I, II СПК', excerpt:'Базова и надграждаща подготовка за участие в строителни дейности и трудова дисциплина.' },
+  { slug:'preraborka-plodove',   name:'Преработка на плодове и зеленчуци',       code:'072105', dirCode:'0721', dir:'Хранителни технологии',           spk:'I, II СПК', excerpt:'Дейности по подготовка, обработка и преработка на растителни суровини в производствена среда.' },
+  { slug:'restorantyorstvo',     name:'Ресторантьорство и кетъринг',             code:'101302', dirCode:'1013', dir:'Хотелиерство, ресторантьорство и кетъринг', spk:'I, II СПК', excerpt:'Подготовка за работа в среда на обслужване и организация на дейности, свързани с ресторантьорски и кетъринг услуги.' },
+  { slug:'hotelierstvo',         name:'Хотелиерство',                            code:'101303', dirCode:'1013', dir:'Хотелиерство, ресторантьорство и кетъринг', spk:'I, II СПК', excerpt:'Дейности в хотелска среда, обслужване, координация и организация на работни процеси.' },
+  { slug:'administrativni',      name:'Административни и офис дейности',         code:'041501', dirCode:'0415', dir:'Секретарски и адм. офис дейности', spk:'I, II СПК', excerpt:'Подготовка за работа с административни процеси, документооборот и офис координация.' },
+  { slug:'mliako',               name:'Производство на мляко и млечни продукти', code:'072102', dirCode:'0721', dir:'Хранителни технологии',           spk:'I, II СПК', excerpt:'Участие в производствени процеси в сектор хранителни технологии — обработка и организация в производствена среда.' },
+  { slug:'fermerstvo',           name:'Фермерство',                              code:'081101', dirCode:'0811', dir:'Растениевъдство, животновъдство и рибно стопанство', spk:'I, II СПК', excerpt:'Дейности в земеделска и стопанска среда с акцент върху практическа насоченост и устойчиво участие.' },
+  { slug:'pomoshtnik-trener',    name:'Помощник-треньор по вид спорт',           code:'101401', dirCode:'1014', dir:'Спорт',                           spk:'III СПК',  excerpt:'Подпомагане на тренировъчния процес, участие в организирана спортна среда, работа в екип.' },
+];
+
+const grid = document.getElementById('prof-grid');
+PROFS.forEach((p, i) => {
+  const a = document.createElement('a');
+  a.href = `profesii/${p.slug}.html`;
+  a.className = 'prof-card r';
+  a.setAttribute('data-d', Math.min(i % 3, 2));
+  a.innerHTML = `
+    <div class="prof-card__top">
+      <div class="prof-card__code"><b>${p.code}</b> · ${p.dirCode}</div>
+      <div class="prof-card__spk">${p.spk}</div>
+    </div>
+    <h3>${p.name}</h3>
+    <p>${p.excerpt}</p>
+    <div class="prof-card__foot">
+      <span class="prof-card__dir">${p.dir}</span>
+      <span class="prof-card__cta">Виж повече <span class="arrow">→</span></span>
+    </div>
+  `;
+  grid.appendChild(a);
+  window.__io && window.__io.observe(a);
+});
+</script>
+</body>
+</html>

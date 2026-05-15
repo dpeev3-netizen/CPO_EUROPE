@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="bg">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Професионални обучения — ЦПО Европа</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alumni+Sans:wght@400;500;600;700&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<link rel="icon" type="image/x-icon" href="favicon_io/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
+<link rel="manifest" href="favicon_io/site.webmanifest">
+<style>
+  .filters{
+    display:grid; grid-template-columns: repeat(3, 1fr) auto;
+    gap: 12px; align-items: end;
+    padding: 24px; background: var(--bone);
+    border: 1px solid var(--line); border-radius: var(--r-lg);
+    margin-bottom: 32px;
+  }
+  @media (max-width: 900px){ .filters{ grid-template-columns: 1fr; gap: 14px } }
+  .filter-group label{
+    display:block; font-family:'JetBrains Mono', monospace;
+    font-size: 10px; letter-spacing: .16em;
+    text-transform: uppercase; color: var(--brand-deep);
+    margin-bottom: 8px;
+  }
+  .filter-group select{
+    width: 100%;
+    background: #fff;
+    border: 1.5px solid var(--line);
+    border-radius: var(--r-md);
+    padding: 14px 44px 14px 18px;
+    color: var(--ink);
+    font: inherit; font-size: 14px;
+    -webkit-appearance: none; appearance: none;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 14 14'><path fill='none' stroke='%2300444D' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' d='M3 5.5l4 4 4-4'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 18px center;
+  }
+  .filter-reset{
+    align-self: stretch;
+    background: transparent;
+    border: 1.5px solid var(--line-strong);
+    color: var(--ink);
+    padding: 14px 22px;
+    border-radius: var(--r-md);
+    font-size: 13px; font-weight: 500;
+    transition: background .2s, border-color .2s, color .2s;
+  }
+  .filter-reset:hover{ background: var(--ink); color: #fff; border-color: var(--ink) }
+  .results-meta{
+    display:flex; justify-content: space-between; align-items: center;
+    gap: 16px; flex-wrap: wrap;
+    margin-bottom: 20px;
+    font-family:'JetBrains Mono', monospace;
+    font-size: 11px; letter-spacing: .14em;
+    text-transform: uppercase; color: var(--muted);
+  }
+  .results-meta b{ color: var(--ink); font-weight: 700 }
+  .prof-row{
+    display: grid;
+    grid-template-columns: 110px 4fr 4fr 1.5fr auto;
+    align-items: center;
+    gap: clamp(12px, 1.5vw, 24px);
+    padding: clamp(18px, 2vw, 26px) clamp(8px, 1vw, 16px);
+    border-bottom: 1px solid var(--line);
+    transition: padding-left .3s cubic-bezier(.3,1,.5,1), background .3s;
+    position: relative;
+  }
+  .prof-row:hover{ padding-left: clamp(16px, 2.5vw, 36px); background: var(--paper) }
+  .prof-row__code{
+    font-family:'JetBrains Mono', monospace;
+    font-size: 12px; letter-spacing: .12em;
+    color: var(--brand-deep); font-weight: 500;
+  }
+  .prof-row__name{
+    font-family:'Alumni Sans'; font-weight: 600;
+    font-size: clamp(20px, 1.7vw, 28px);
+    text-transform: uppercase; letter-spacing: -.01em;
+    line-height: 1.1; color: var(--ink);
+  }
+  .prof-row__dir{
+    font-size: 13px; color: var(--muted); line-height: 1.45;
+  }
+  .prof-row__dir small{
+    display:block;
+    font-family:'JetBrains Mono', monospace;
+    font-size: 10px; letter-spacing: .12em;
+    color: var(--brand-deep); margin-bottom: 4px;
+  }
+  .prof-row__spk{
+    font-family:'JetBrains Mono', monospace;
+    font-size: 11px; letter-spacing: .12em;
+    color: var(--ink); font-weight: 500;
+    padding: 6px 12px;
+    background: var(--mint);
+    border-radius: 999px;
+    text-align: center;
+    white-space: nowrap;
+  }
+  .prof-row__cta{
+    width: 38px; height: 38px;
+    border-radius: 50%;
+    border: 1px solid var(--line-strong);
+    display:flex; align-items:center; justify-content: center;
+    color: var(--ink);
+    transition: background .25s, color .25s, border-color .25s, transform .35s;
+  }
+  .prof-row:hover .prof-row__cta{
+    background: var(--ink); color: #fff; border-color: var(--ink);
+    transform: rotate(-45deg);
+  }
+  @media (max-width: 900px){
+    .prof-row{
+      grid-template-columns: 1fr;
+      gap: 10px;
+      padding: 22px 20px;
+      margin-bottom: 12px;
+      background: var(--bone);
+      border: 1px solid var(--line);
+      border-radius: var(--r-lg);
+      border-bottom: 1px solid var(--line);
+      text-align: center;
+    }
+    .prof-row:hover{ padding-left: 20px }
+    .prof-row__code{ font-size: 11px; margin-bottom: 4px }
+    .prof-row__name{ font-size: clamp(22px, 5vw, 28px) }
+    .prof-row__dir{ font-size: 13px; color: var(--muted) }
+    .prof-row__dir small{ margin-bottom: 2px }
+    .prof-row__spk{ justify-self: center; margin-top: 6px }
+    .prof-row__cta{ display: none }
+  }
+  .prof-row.hidden{ display: none }
+  .empty{
+    padding: 48px 24px; text-align: center;
+    background: var(--bone); border: 1px dashed var(--line);
+    border-radius: var(--r-lg);
+    color: var(--muted); display: none;
+  }
+  .empty.show{ display: block }
+</style>
+</head>
+<body>
+
+<div id="site-nav"></div>
+
+<section class="page-head" data-screen-label="01 Obucheniya Head">
+  <span class="page-head__decor" aria-hidden="true"></span>
+  <div class="wrap">
+    <div class="page-head__centered" style="max-width: 1100px; margin: 0 auto; text-align: center; display:flex; flex-direction:column; align-items:center; gap: 16px">
+      <span class="eyebrow r">
+</span>
+      <h1 class="r" data-d="1" style="max-width: 22ch">Професионални <em class="accent">обучения</em>.</h1>
+      <p class="lead r" data-d="2" style="margin-top: 8px; max-width: 760px">Центърът предлага професионални обучения по различни професионални направления, професии и степени на професионална квалификация. Всяко обучение се организира въз основа на учебен план и учебна програма и включва теоретична и практическа подготовка.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec-sm" data-screen-label="02 Filter">
+  <div class="wrap">
+    <div class="filters r">
+      <div class="filter-group">
+        <label for="filter-dir">Професионално направление</label>
+        <select id="filter-dir">
+          <option value="">Всички направления</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label for="filter-prof">Професия</label>
+        <select id="filter-prof">
+          <option value="">Всички професии</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label for="filter-spk">Степен СПК</label>
+        <select id="filter-spk">
+          <option value="">Всички степени</option>
+          <option value="I">I СПК</option>
+          <option value="II">II СПК</option>
+          <option value="III">III СПК</option>
+        </select>
+      </div>
+      <button class="filter-reset" id="filter-reset">Изчисти</button>
+    </div>
+
+    <div class="results-meta">
+      <span>Резултати: <b id="results-count">10</b> / 10</span>
+      <span>Сортиране: по код</span>
+    </div>
+
+    <div id="prof-list"></div>
+
+    <div class="empty" id="empty">
+      <p>Няма обучения, отговарящи на избраните филтри.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec-sm">
+  <div class="wrap">
+    <div class="cta-block r">
+      <div>
+        <span class="eyebrow eyebrow--light">Запитване</span>
+        <h2 style="margin-top:12px">Не намираш<br/>подходящо <em>обучение?</em></h2>
+        <p>Свържи се с нас за информация за заявени обучения, фирмени групи и индивидуални програми.</p>
+      </div>
+      <div class="cta-block__actions">
+        <a href="kontakti.html#contact-form" class="btn btn--primary">Изпрати запитване <span class="arrow">→</span></a>
+        <a href="rabotodateli.html" class="btn btn--ghost-light">За работодатели</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+<script>window.SITE_BASE = './';</script>
+<script src="assets/site.js"></script>
+<script>
+const PROFESSIONS = [
+  { code:'092302', name:'Социални дейности',                          dirCode:'0923', dir:'Социална работа и консултиране',           spk:['III'], slug:'socialni-deynosti' },
+  { code:'041501', name:'Административни и офис дейности',            dirCode:'0415', dir:'Секретарски и адм. офис дейности',         spk:['I','II'], slug:'administrativni' },
+  { code:'072102', name:'Производство на мляко и млечни продукти',    dirCode:'0721', dir:'Хранителни технологии',                    spk:['I','II'], slug:'mliako' },
+  { code:'072105', name:'Преработка на плодове и зеленчуци',          dirCode:'0721', dir:'Хранителни технологии',                    spk:['I','II'], slug:'preraborka-plodove' },
+  { code:'073201', name:'Строителство и архитектура',                 dirCode:'0732', dir:'Строителство',                             spk:['I','II'], slug:'stroitelstvo' },
+  { code:'081101', name:'Фермерство',                                 dirCode:'0811', dir:'Растениевъдство, животновъдство и рибно стопанство', spk:['I','II'], slug:'fermerstvo' },
+  { code:'101301', name:'Готварство',                                 dirCode:'1013', dir:'Хотелиерство, ресторантьорство и кетъринг', spk:['I','II'], slug:'gotvarstvo' },
+  { code:'101302', name:'Ресторантьорство и кетъринг',                dirCode:'1013', dir:'Хотелиерство, ресторантьорство и кетъринг', spk:['I','II'], slug:'restorantyorstvo' },
+  { code:'101303', name:'Хотелиерство',                               dirCode:'1013', dir:'Хотелиерство, ресторантьорство и кетъринг', spk:['I','II'], slug:'hotelierstvo' },
+  { code:'101401', name:'Помощник-треньор по вид спорт',              dirCode:'1014', dir:'Спорт',                                    spk:['III'], slug:'pomoshtnik-trener' },
+];
+
+// Populate filter dropdowns
+const dirSel = document.getElementById('filter-dir');
+const profSel = document.getElementById('filter-prof');
+const spkSel = document.getElementById('filter-spk');
+const list = document.getElementById('prof-list');
+const countEl = document.getElementById('results-count');
+const empty = document.getElementById('empty');
+
+const dirs = [...new Set(PROFESSIONS.map(p => `${p.dirCode}|${p.dir}`))].sort();
+dirs.forEach(d => {
+  const [code, name] = d.split('|');
+  const opt = document.createElement('option');
+  opt.value = code;
+  opt.textContent = `${code} ${name}`;
+  dirSel.appendChild(opt);
+});
+PROFESSIONS.sort((a, b) => a.code.localeCompare(b.code)).forEach(p => {
+  const opt = document.createElement('option');
+  opt.value = p.code;
+  opt.textContent = `${p.code} ${p.name}`;
+  profSel.appendChild(opt);
+});
+
+// Render rows
+PROFESSIONS.forEach(p => {
+  const a = document.createElement('a');
+  a.href = `profesii/${p.slug}.html`;
+  a.className = 'prof-row r';
+  a.dataset.dir = p.dirCode;
+  a.dataset.code = p.code;
+  a.dataset.spk = p.spk.join(',');
+  a.innerHTML = `
+    <div class="prof-row__code">${p.code}</div>
+    <div class="prof-row__name">${p.name}</div>
+    <div class="prof-row__dir"><small>${p.dirCode}</small>${p.dir}</div>
+    <div class="prof-row__spk">${p.spk.join(', ')} СПК</div>
+    <div class="prof-row__cta" aria-hidden="true">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+    </div>
+  `;
+  list.appendChild(a);
+  window.__io && window.__io.observe(a);
+});
+
+// Filtering
+const applyFilters = () => {
+  const dv = dirSel.value;
+  const pv = profSel.value;
+  const sv = spkSel.value;
+  let shown = 0;
+  list.querySelectorAll('.prof-row').forEach(r => {
+    const okD = !dv || r.dataset.dir === dv;
+    const okP = !pv || r.dataset.code === pv;
+    const okS = !sv || r.dataset.spk.split(',').includes(sv);
+    const visible = okD && okP && okS;
+    r.classList.toggle('hidden', !visible);
+    if (visible) shown++;
+  });
+  countEl.textContent = shown;
+  empty.classList.toggle('show', shown === 0);
+};
+[dirSel, profSel, spkSel].forEach(el => el.addEventListener('change', applyFilters));
+document.getElementById('filter-reset').addEventListener('click', () => {
+  dirSel.value = ''; profSel.value = ''; spkSel.value = '';
+  applyFilters();
+});
+</script>
+</body>
+</html>

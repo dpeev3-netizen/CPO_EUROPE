@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="bg">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Обучения по ЗБУТ — ЦПО Европа</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alumni+Sans:wght@400;500;600;700&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<link rel="icon" type="image/x-icon" href="favicon_io/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
+<link rel="manifest" href="favicon_io/site.webmanifest">
+<style>
+  .risk-section{
+    padding: clamp(40px, 5vw, 72px) 0;
+    border-top: 1px solid var(--line-dark);
+    scroll-margin-top: calc(var(--nav-h) + 24px);
+  }
+  .risk-section:first-of-type{ border-top: none; padding-top: 0 }
+  .risk-section__head{
+    display:grid; grid-template-columns: 1fr 2fr;
+    gap: clamp(24px, 4vw, 64px);
+    align-items: start; margin-bottom: 32px;
+  }
+  @media (max-width: 900px){ .risk-section__head{ grid-template-columns: 1fr; gap: 16px } }
+  .risk-section__num{
+    font-family:'Alumni Sans'; font-weight: 700;
+    font-size: clamp(80px, 11vw, 180px);
+    line-height: .85; letter-spacing: -.03em;
+    color: var(--brand);
+  }
+  .risk--medium .risk-section__num{ color: var(--orange) }
+  .risk--high .risk-section__num{ color: var(--red) }
+  .risk-section h2{ color: #fff; font-size: clamp(36px, 4vw, 52px); margin-bottom: 14px }
+  .risk-section .meta{
+    display:flex; gap: 18px; flex-wrap: wrap;
+    margin: 12px 0 20px;
+    font-family:'JetBrains Mono', monospace;
+    font-size: 11px; letter-spacing: .14em;
+    text-transform: uppercase;
+  }
+  .risk-section .meta span{
+    padding: 6px 12px;
+    border: 1px solid rgba(255,255,255,.18);
+    border-radius: 999px;
+    color: rgba(255,255,255,.78);
+  }
+  .risk-section .meta span b{ color: #fff; font-weight: 500 }
+  .risk-section p{ color: var(--muted-light); font-size: 16px; line-height: 1.7; max-width: 700px }
+  .risk-section .topics{
+    margin-top: 24px;
+    display:grid; grid-template-columns: repeat(2, 1fr);
+    gap: 8px 24px;
+  }
+  @media (max-width: 720px){ .risk-section .topics{ grid-template-columns: 1fr } }
+  .risk-section .topics li{
+    list-style: none;
+    padding: 10px 0 10px 24px;
+    border-top: 1px solid rgba(255,255,255,.08);
+    color: #fff; font-size: 14px;
+    position: relative;
+  }
+  .risk-section .topics li::before{
+    content: ""; position: absolute;
+    left: 0; top: 18px;
+    width: 8px; height: 8px;
+    border-radius: 50%; background: var(--brand);
+  }
+  .risk--medium .topics li::before{ background: var(--orange) }
+  .risk--high .topics li::before{ background: var(--red) }
+</style>
+</head>
+<body>
+
+<div id="site-nav"></div>
+
+<section class="page-head ink-section" data-screen-label="01 ZBUT Head" style="background: var(--ink)">
+  <div class="wrap">
+    <div class="page-head__centered" style="max-width: 1100px; margin: 0 auto; text-align: center; display:flex; flex-direction:column; align-items:center; gap: 16px">
+      <span class="eyebrow eyebrow--light r">ЗБУТ</span>
+      <h1 class="r" data-d="1" style="max-width: none; color: #fff">Обучения по здравословни и<br/><em class="accent--light">безопасни</em> условия на труд.</h1>
+      <p class="lead r" data-d="2" style="margin-top: 8px; max-width: 760px; color: var(--muted-light)">Центърът предлага обучения по здравословни и безопасни условия на труд, разработени според категорията на риска и спецификата на работната среда. Програмите са насочени към безопасна организация на труда, превенция на инциденти, спазване на нормативните изисквания и формиране на култура на безопасност.</p>
+    </div>
+  </div>
+</section>
+
+<section class="ink-section" style="background: var(--ink-deep)" data-screen-label="02 ZBUT Programs">
+  <div class="wrap" style="padding-top: clamp(40px, 6vw, 80px); padding-bottom: clamp(40px, 6vw, 80px)">
+
+    <article class="risk-section risk--low r" id="low">
+      <div class="risk-section__head">
+        <div class="risk-section__num">I</div>
+        <div>
+          <span class="mono" style="color: var(--brand)">Категория · нисък риск</span>
+          <h2>Обучение на работник при <em class="accent--light">нискорискови</em> дейности.</h2>
+          <div class="meta">
+            <span><b>8 часа</b></span>
+            <span>Наредба № РД-07-2 / 16.12.2009 г.</span>
+            <span>Офис · администрация · обслужваща дейност</span>
+          </div>
+          <p>
+            Обучението е с продължителност 8 часа и се провежда в съответствие с Наредба № РД-07-2 от 16 декември 2009 г. Програмата е подходяща за нискорискови дейности, включително офис, административни, обслужващи и други сходни дейности. Обучението включва обща и специфична част, насочени към безопасна организация на работното място.
+          </p>
+        </div>
+      </div>
+      <ul class="topics">
+        <li>Безопасна организация на работното място</li>
+        <li>Работа с компютри и видеодисплейни терминали</li>
+        <li>Ръчно пренасяне на леки товари</li>
+        <li>Физични фактори</li>
+        <li>Използване на препарати</li>
+        <li>Лични предпазни средства</li>
+        <li>Пожарна безопасност</li>
+        <li>Действия при инциденти</li>
+      </ul>
+    </article>
+
+    <article class="risk-section risk--medium r" id="medium">
+      <div class="risk-section__head">
+        <div class="risk-section__num">II</div>
+        <div>
+          <span class="mono" style="color: var(--orange)">Категория · среден риск</span>
+          <h2>Обучение на работник в селското стопанство — <em class="accent--light">среден риск</em>.</h2>
+          <div class="meta">
+            <span><b>12 часа</b></span>
+            <span>Категория A01</span>
+            <span>Земеделски производител · работа с машини</span>
+          </div>
+          <p>
+            Обучението е с продължителност 12 часа и е насочено към работник в селското стопанство (земеделски производител), категория A01. Програмата обхваща обща и специфична част и включва механични, електрически, химични и биологични рискове, работа с машини и оборудване, организация на труда и аварийни ситуации.
+          </p>
+        </div>
+      </div>
+      <ul class="topics">
+        <li>Механични рискове</li>
+        <li>Електрически рискове</li>
+        <li>Химични рискове</li>
+        <li>Биологични рискове</li>
+        <li>Работа с машини и оборудване</li>
+        <li>Организация на труда</li>
+        <li>Лични предпазни средства</li>
+        <li>Аварийни ситуации</li>
+        <li>Противопожарни мерки</li>
+        <li>Първа помощ</li>
+        <li>Анализ на инциденти</li>
+      </ul>
+    </article>
+
+    <article class="risk-section risk--high r" id="high">
+      <div class="risk-section__head">
+        <div class="risk-section__num">III</div>
+        <div>
+          <span class="mono" style="color: var(--red)">Категория · висок риск</span>
+          <h2>Обучение на работник при <em class="accent--light">високорискови</em> дейности.</h2>
+          <div class="meta">
+            <span><b>16 часа</b></span>
+            <span>Машини · подемна техника · работа на височина</span>
+            <span>Опасни вещества · електрооборудване</span>
+          </div>
+          <p>
+            Обучението е с продължителност 16 часа и е предназначено за дейности с машини, съоръжения, електрооборудване, опасни вещества, подемна техника, работа на височина и други дейности с повишен риск. Програмата включва обща и специфична част и разглежда рискове от наранявания, механични и електрически рискове, работа на височина, химични, биологични и физични фактори.
+          </p>
+        </div>
+      </div>
+      <ul class="topics">
+        <li>Рискове от наранявания</li>
+        <li>Механични рискове</li>
+        <li>Електрически рискове</li>
+        <li>Машини и оборудване</li>
+        <li>Работа на височина</li>
+        <li>Химични фактори</li>
+        <li>Биологични фактори</li>
+        <li>Физични фактори</li>
+        <li>Лични предпазни средства</li>
+        <li>Аварийни ситуации</li>
+        <li>Противопожарни мерки</li>
+        <li>Първа помощ · Анализ на инциденти</li>
+      </ul>
+    </article>
+
+  </div>
+</section>
+
+<section class="sec-sm">
+  <div class="wrap">
+    <div class="cta-block r">
+      <div>
+        <span class="eyebrow eyebrow--light">Корпоративни групи</span>
+        <h2 style="margin-top:12px">Обучение по ЗБУТ<br/>за <em>работодатели</em>.</h2>
+        <p>Възможности за организиране на групови и вътрешнофирмени обучения, съобразени с профила на дейността и работната среда.</p>
+      </div>
+      <div class="cta-block__actions">
+        <a href="rabotodateli.html" class="btn btn--primary">За работодатели <span class="arrow">→</span></a>
+        <a href="kontakti.html#contact-form" class="btn btn--ghost-light">Заяви обучение</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+<script>window.SITE_BASE = './';</script>
+<script src="assets/site.js"></script>
+</body>
+</html>

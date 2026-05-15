@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="bg">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Социални дейности — ЦПО Европа</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alumni+Sans:wght@400;500;600;700&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="icon" type="image/x-icon" href="../favicon_io/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon_io/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon_io/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../favicon_io/apple-touch-icon.png">
+<link rel="manifest" href="../favicon_io/site.webmanifest">
+<style>
+  .prof-hero{
+    padding: calc(var(--nav-h) + clamp(48px, 7vw, 96px)) 0 clamp(48px, 6vw, 80px);
+    position:relative; overflow:hidden;
+  }
+  .prof-hero__top{
+    display:flex; gap: 16px; flex-wrap: wrap;
+    margin-bottom: 24px;
+    align-items: center;
+    font-family:'JetBrains Mono', monospace;
+    font-size: 11px; letter-spacing: .14em;
+    text-transform: uppercase; color: var(--muted);
+  }
+  .prof-hero__top .sep{ opacity: .4 }
+  .prof-hero__top a{ color: var(--muted); transition: color .2s }
+  .prof-hero__top a:hover{ color: var(--ink) }
+  .prof-hero__top .spk-tag{
+    padding: 6px 12px; background: var(--mint);
+    border-radius: 999px;
+    color: var(--ink); font-weight: 500;
+    letter-spacing: .12em;
+  }
+  .prof-hero__grid{
+    display:grid; grid-template-columns: 1.2fr 1fr;
+    gap: clamp(32px, 5vw, 80px);
+    align-items: end;
+  }
+  @media (max-width: 900px){ .prof-hero__grid{ grid-template-columns:1fr; gap: 32px } }
+  .prof-hero h1{ margin-top: 12px }
+  .prof-hero .lead{ margin-top: 24px; max-width: 540px; font-size: clamp(16px, 1.3vw, 18px); color: var(--muted) }
+  .prof-side{
+    background: var(--bone); border: 1px solid var(--line);
+    border-radius: var(--r-lg); padding: 24px;
+  }
+  .prof-side h5{
+    font-family:'JetBrains Mono', monospace;
+    font-size: 10px; letter-spacing: .16em;
+    text-transform: uppercase; color: var(--brand-deep);
+    margin-bottom: 16px; font-weight: 500;
+  }
+
+  .prof-body{ padding: clamp(48px, 7vw, 96px) 0; background: var(--bone) }
+  .prof-body__grid{
+    display:grid; grid-template-columns: 3fr 9fr;
+    gap: clamp(32px, 5vw, 80px);
+    align-items: start;
+  }
+  @media (max-width: 900px){ .prof-body__grid{ grid-template-columns:1fr } }
+  .prof-toc{
+    position: sticky; top: calc(var(--nav-h) + 32px);
+  }
+  .prof-toc h5{
+    font-family:'JetBrains Mono', monospace;
+    font-size: 10px; letter-spacing: .16em;
+    text-transform: uppercase; color: var(--brand-deep);
+    margin-bottom: 14px; font-weight: 500;
+  }
+  .prof-toc ol{ list-style: none; counter-reset: tc; display:grid; gap: 2px }
+  .prof-toc li{ counter-increment: tc }
+  .prof-toc a{
+    display:block;
+    padding: 10px 0; font-size: 14px; color: var(--ink); opacity: .78;
+    border-top: 1px solid var(--line);
+    transition: opacity .2s, color .2s, padding-left .2s;
+  }
+  .prof-toc a:hover{ opacity: 1; color: var(--brand-deep); padding-left: 4px }
+  .p-sec{
+    padding: clamp(28px, 4vw, 48px) 0;
+    border-top: 1px solid var(--line);
+    scroll-margin-top: calc(var(--nav-h) + 24px);
+  }
+  .p-sec:first-of-type{ border-top: none; padding-top: 0 }
+  .p-sec .mono{ color: var(--brand-deep) }
+  .p-sec h2{ margin: 12px 0 18px; font-size: clamp(28px, 3vw, 40px) }
+  .p-sec h2 em{ font-style:normal; color: var(--brand-deep); font-weight: 500 }
+  .p-sec p{ font-size: 16px; line-height: 1.7; color: var(--ink); max-width: 720px }
+  .p-sec p + p{ margin-top: 14px }
+  .p-sec b{ color: var(--ink); font-weight: 700 }
+</style>
+</head>
+<body>
+
+<div id="site-nav"></div>
+
+<header class="prof-hero" data-screen-label="01 Profession Hero">
+  <span class="page-head__decor" aria-hidden="true"></span>
+  <div class="wrap">
+    <div class="prof-hero__top r">
+      <a href="../index.html">Начало</a><span class="sep">→</span>
+      <a href="../profesii.html">Професии</a><span class="sep">→</span>
+      <span style="color: var(--ink); font-weight: 500">Социални дейности</span>
+      <span style="flex:1"></span>
+      <span class="spk-tag">III СПК</span>
+    </div>
+    <div class="prof-hero__grid">
+      <div>
+        <span class="eyebrow r">092302 · 0923 Социална работа и консултиране</span>
+        <h1 class="r" data-d="1">Социални дейности.</h1>
+        <p class="lead r" data-d="2">Професия „Социални дейности“ е част от професионално направление 0923 „Социална работа и консултиране“ и се предлага с III степен на професионална квалификация. Обучението е насочено към подготовка за участие в дейности, свързани със социална среда, комуникация, подкрепа, работа с хора и организационно съдействие в социален контекст.</p>
+        <div style="display:flex; gap: 12px; margin-top: 32px; flex-wrap: wrap" class="r" data-d="3">
+          <a href="../kontakti.html#contact-form" class="btn btn--primary">Изпрати запитване <span class="arrow">→</span></a>
+          <a href="../obucheniya.html" class="btn btn--outline">Виж всички професии</a>
+        </div>
+      </div>
+      <aside class="prof-side r" data-d="2">
+        <h5>За обучението</h5>
+        <dl class="defs">
+          <div><dt>Код професия</dt><dd style="font-family:'JetBrains Mono', monospace; font-size:14px; letter-spacing:.06em">092302</dd></div>
+          <div><dt>Направление</dt><dd style="font-size:16px; text-transform:none; letter-spacing:0; line-height:1.4">0923 Социална работа и консултиране</dd></div>
+          <div><dt>Степен СПК</dt><dd>III СПК</dd></div>
+        </dl>
+      </aside>
+    </div>
+  </div>
+</header>
+
+<section class="prof-body" data-screen-label="02 Profession Body">
+  <div class="wrap">
+    <div class="prof-body__grid">
+      <aside class="prof-toc r">
+        <h5>Съдържание</h5>
+        <ol>
+          <li><a href="#intro">Кратко представяне</a></li>
+          <li><a href="#audience">За кого е подходящо</a></li>
+          <li><a href="#includes">Какво включва</a></li>
+          <li><a href="#theory">Теория и практика</a></li>
+          <li><a href="#org">Организация</a></li>
+          <li><a href="#doc">Завършване и документ</a></li>
+        </ol>
+      </aside>
+
+      <div>
+        <article class="p-sec r" id="intro">
+          <h2>Кратко <em>представяне</em>.</h2>
+          <p>Професия „Социални дейности“ е част от професионално направление 0923 „Социална работа и консултиране“ и се предлага с III степен на професионална квалификация. Обучението е насочено към подготовка за участие в дейности, свързани със социална среда, комуникация, подкрепа, работа с хора и организационно съдействие в социален контекст.</p>
+        </article>
+
+        <article class="p-sec r" id="audience">
+          <h2>За кого е <em>подходящо</em>.</h2>
+          <p>Хора, които се интересуват от работа с потребители на социални услуги, екипна подкрепа и организационно съдействие в социален контекст.</p>
+        </article>
+
+        <article class="p-sec r" id="includes">
+          <h2>Какво <em>включва</em> обучението.</h2>
+          <ul class="bullets" style="margin-top: 8px">
+            <li>Социална среда и контекст</li>
+            <li>Комуникация с потребители</li>
+            <li>Подкрепа и работа с хора</li>
+            <li>Организационно съдействие</li>
+          </ul>
+        </article>
+
+        <article class="p-sec r" id="theory">
+          <h2>Теоретична и <em>практическа</em> подготовка.</h2>
+          <p>
+            Обучението по професията се организира в <b>теоретична</b> и <b>практическа</b> част, в учебни кабинети и/или в реална работна среда, съобразно спецификата на професията и изискванията на учебната документация.
+          </p>
+          <p>
+            За всяка група се изготвят график, разпределение на учебните часове, определят се преподаватели по теория и практика и се води изискуемата учебна документация.
+          </p>
+        </article>
+
+        <article class="p-sec r" id="org">
+          <h2>Организация на <em>обучението</em>.</h2>
+          <p>
+            Професионалното обучение се организира въз основа на учебни планове и учебни програми, разработени в съответствие със <b>ЗПОО</b>, рамковите програми и държавните образователни стандарти за придобиване на квалификация по професията.
+          </p>
+          <p>
+            Преподавателите по теория и практика се подбират съобразно изискванията за образование, професионална квалификация и опит, съответстващи на професията и степента на професионална квалификация.
+          </p>
+        </article>
+
+        <article class="p-sec r" id="doc">
+          <h2>Завършване и <em>издаван документ</em>.</h2>
+          <p>
+            Професионалното обучение завършва след изпълнение на учебния план и учебната програма, включително предвидения хорариум по теория и практика. На успешно завършилите обучаеми ЦПО издава документ за <b>професионално обучение</b> или <b>професионална квалификация</b> по утвърдените образци.
+          </p>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec-sm">
+  <div class="wrap">
+    <div class="cta-block r">
+      <div>
+        <span class="eyebrow eyebrow--light">Запитване</span>
+        <h2 style="margin-top:12px">Започни обучение по<br/><em>Социални дейности</em>.</h2>
+        <p>Изпрати запитване и ще получиш пълна информация за програмата, графика и документите за прием.</p>
+      </div>
+      <div class="cta-block__actions">
+        <a href="../kontakti.html#contact-form" class="btn btn--primary">Изпрати запитване <span class="arrow">→</span></a>
+        <a href="../profesii.html" class="btn btn--ghost-light">Всички професии</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+<script>window.SITE_BASE = '../';</script>
+<script src="../assets/site.js"></script>
+</body>
+</html>

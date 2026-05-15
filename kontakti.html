@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="bg">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Контакти — ЦПО Европа</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alumni+Sans:wght@400;500;600;700&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<link rel="icon" type="image/x-icon" href="favicon_io/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
+<link rel="manifest" href="favicon_io/site.webmanifest">
+<style>
+  .contact-info-grid{
+    display:grid; grid-template-columns: repeat(4, 1fr); gap: 14px;
+    margin-bottom: 32px;
+  }
+  @media (max-width: 900px){ .contact-info-grid{ grid-template-columns: repeat(2, 1fr) } }
+  @media (max-width: 560px){ .contact-info-grid{ grid-template-columns: 1fr } }
+  .ci-card{
+    background: var(--bone); border: 1px solid var(--line);
+    border-radius: var(--r-lg);
+    padding: 28px;
+    transition: transform .25s, border-color .25s;
+  }
+  .ci-card:hover{ transform: translateY(-3px); border-color: var(--brand) }
+  .ci-card__icon{
+    width: 44px; height: 44px;
+    border-radius: 12px;
+    background: var(--mint);
+    display:flex; align-items:center; justify-content:center;
+    color: var(--ink);
+    margin-bottom: 20px;
+  }
+  .ci-card .l{
+    font-family:'JetBrains Mono', monospace;
+    font-size: 10px; letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--muted); margin-bottom: 8px;
+  }
+  .ci-card .v{
+    font-family:'Alumni Sans', sans-serif;
+    font-weight: 600; font-size: 22px;
+    color: var(--ink); line-height: 1.15;
+    text-transform: uppercase; letter-spacing: -.005em;
+  }
+  .ci-card .v.mono-v{
+    font-family:'JetBrains Mono', monospace;
+    font-size: 15px; letter-spacing: .03em;
+    text-transform: none;
+  }
+  .map-block{
+    height: clamp(280px, 38vw, 440px);
+    border-radius: var(--r-xl);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--line);
+  }
+  .map-block iframe{
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+  }
+</style>
+</head>
+<body>
+
+<div id="site-nav"></div>
+
+<section class="page-head" data-screen-label="01 Contacts Head">
+  <span class="page-head__decor" aria-hidden="true"></span>
+  <div class="wrap">
+    <div style="text-align: center; max-width: 760px; margin: 0 auto;" class="r" data-d="1">
+      <h1 style="white-space: nowrap;">Свържи се <em class="accent">с нас</em>.</h1>
+      <p class="lead" style="margin-top: 24px; text-align: center; margin-left: auto; margin-right: auto; max-width: 760px;">Свържете се с центъра за информация относно професионални обучения, обучения по ЗБУТ, фирмени обучения и партньорства.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec-sm" data-screen-label="02 Contact Info">
+  <div class="wrap">
+    <span class="eyebrow r">Информация</span>
+    <h2 style="margin-top:14px; margin-bottom: 32px" class="r" data-d="1">Контактна <em class="accent">информация</em>.</h2>
+
+    <div class="contact-info-grid">
+      <div class="ci-card r">
+        <div class="ci-card__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+        <div class="l">Телефон</div>
+        <div class="v mono-v">0882721739</div>
+      </div>
+      <div class="ci-card r" data-d="1">
+        <div class="ci-card__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="M4 7l8 6 8-6"/></svg></div>
+        <div class="l">Имейл</div>
+        <div class="v mono-v">educationalcluster5@gmail.com</div>
+      </div>
+      <div class="ci-card r" data-d="2">
+        <div class="ci-card__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <div class="l">Адрес</div>
+        <div class="v">гр. София, р-н Средец,<br/>ул. Славянска 20</div>
+      </div>
+      <div class="ci-card r" data-d="3">
+        <div class="ci-card__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+        <div class="l">Работно време</div>
+        <div class="v mono-v">Пон — Пет<br/>09:00 — 17:30</div>
+      </div>
+    </div>
+
+    <div class="map-block r" data-d="1" aria-label="Локация на центъра — карта">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2932.540465762731!2d23.330057699999998!3d42.692275599999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40aa8573814ccf63%3A0xfca14909277e435f!2sSofia%20Center%2C%20Slavyanska%20St%2020%2C%201000%20Sofia!5e0!3m2!1sbg!2sbg!4v1778864003328!5m2!1sbg!2sbg" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+</section>
+
+<section class="sec" style="background: var(--bone)" data-screen-label="03 Contact Form">
+  <div class="wrap">
+    <div style="text-align: center; max-width: 760px; margin: 0 auto 48px;" class="r">
+      <span class="eyebrow">Запитване</span>
+      <h2 style="margin-top: 14px; white-space: nowrap;">Изпрати запитване.</h2>
+      <p class="lead" style="margin-top: 20px; text-align: center; margin-left: auto; margin-right: auto; max-width: 760px;">Отговор в рамките на 1 работен ден с пълна информация по запитването.</p>
+    </div>
+
+    <div style="max-width: 720px; margin: 0 auto">
+      <div class="form-card r" id="contact-form">
+        <form data-enquiry novalidate>
+          <div class="field--row">
+            <div class="field"><input type="text" id="f-name" required><label for="f-name">Име *</label></div>
+            <div class="field"><input type="tel" id="f-phone" required><label for="f-phone">Телефон *</label></div>
+          </div>
+          <div class="field"><input type="email" id="f-email" required><label for="f-email">Имейл *</label></div>
+          <div class="field field--select">
+            <label class="static">Интерес към обучение *</label>
+            <select required>
+              <option value="" disabled selected>Избери направление…</option>
+              <option>0923 Социална работа и консултиране</option>
+              <option>1013 Хотелиерство, ресторантьорство и кетъринг</option>
+              <option>0732 Строителство</option>
+              <option>0721 Хранителни технологии</option>
+              <option>0415 Секретарски и адм. офис дейности</option>
+              <option>0811 Растениевъдство, животновъдство и рибно стопанство</option>
+              <option>1014 Спорт</option>
+              <option>ЗБУТ — обучения по безопасност</option>
+              <option>Фирмено / групово обучение</option>
+              <option>Друго / неуточнено</option>
+            </select>
+          </div>
+          <div class="field"><textarea id="f-msg"></textarea><label for="f-msg">Съобщение</label></div>
+          <label class="field--check">
+            <input type="checkbox" required>
+            <span>Съгласен/а съм с обработването на личните ми данни съгласно Политиката за поверителност.</span>
+          </label>
+          <button type="submit" class="btn btn--primary">Изпрати запитване <span class="arrow">→</span></button>
+        </form>
+        <div class="form-success">
+          <div class="check"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg></div>
+          <h3>Запитването е изпратено.</h3>
+          <p style="color: var(--muted); margin-top:10px">Благодарим. Ще се свържем с теб в рамките на 1 работен ден.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+<script>window.SITE_BASE = './';</script>
+<script src="assets/site.js"></script>
+</body>
+</html>

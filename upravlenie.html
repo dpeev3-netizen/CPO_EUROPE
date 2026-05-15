@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="bg">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Управление и организация — ЦПО Европа</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alumni+Sans:wght@400;500;600;700&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<link rel="icon" type="image/x-icon" href="favicon_io/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
+<link rel="manifest" href="favicon_io/site.webmanifest">
+<style>
+  .toc{
+    position:sticky; top: calc(var(--nav-h) + 32px);
+    background: var(--bone); border:1px solid var(--line);
+    border-radius: var(--r-lg); padding: 24px;
+  }
+  .toc h5{ font-family:'JetBrains Mono', monospace; font-size:10px; letter-spacing:.16em; text-transform:uppercase; color: var(--brand-deep); margin-bottom:14px; font-weight:500 }
+  .toc ol{ list-style:none; counter-reset: tocn; display:grid; gap:2px }
+  .toc li{ counter-increment: tocn }
+  .toc a{
+    display:block;
+    padding: 8px 0; font-size:14px; color: var(--ink); opacity:.78;
+    transition: opacity .2s, color .2s, padding-left .2s;
+    border-top: 1px solid var(--line);
+  }
+  .toc a:hover{ opacity:1; color: var(--brand-deep); padding-left: 4px }
+  .mgmt-grid{
+    display:grid; grid-template-columns: 3fr 9fr;
+    gap: clamp(32px, 5vw, 80px);
+    align-items: start;
+  }
+  @media (max-width: 900px){ .mgmt-grid{ grid-template-columns:1fr } .toc{ position: static } }
+  .mgmt-section{
+    padding: clamp(40px, 5vw, 64px) 0;
+    border-top: 1px solid var(--line);
+    scroll-margin-top: calc(var(--nav-h) + 24px);
+  }
+  .mgmt-section:first-of-type{ border-top: none; padding-top: 8px }
+  .mgmt-section .mono{ color: var(--brand-deep) }
+  .mgmt-section h2{ margin: 14px 0 28px; font-size: clamp(32px, 3.8vw, 48px) }
+  .mgmt-section h2 em{ font-style:normal; color: var(--brand-deep); font-weight: 500 }
+  .mgmt-section p{ font-size: 16px; line-height: 1.7; color: var(--ink); max-width: 720px }
+  .mgmt-section p + p{ margin-top: 16px }
+  .mgmt-section b{ color: var(--ink); font-weight:700 }
+</style>
+</head>
+<body>
+
+<div id="site-nav"></div>
+
+<section class="page-head" data-screen-label="01 Upravlenie Head">
+  <span class="page-head__decor" aria-hidden="true"></span>
+  <div class="wrap">
+    <div class="page-head__centered" style="max-width: 1100px; margin: 0 auto; text-align: center; display:flex; flex-direction:column; align-items:center; gap: 16px">
+      <span class="eyebrow r"></span>
+      <h1 class="r" data-d="1" style="max-width: 22ch">Управление и <em class="accent">организация</em>.</h1>
+      <p class="lead r" data-d="2" style="margin-top: 8px; max-width: 760px">Как е организиран центърът, как се провежда обучението и как се поддържа учебната документация в съответствие с нормативната уредба.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec-sm" data-screen-label="02 Upravlenie Body">
+  <div class="wrap">
+    <div class="mgmt-grid">
+      <aside class="toc r">
+        <h5>Съдържание</h5>
+        <ol>
+          <li><a href="#s1">Управление на центъра</a></li>
+          <li><a href="#s2">Организация на процеса</a></li>
+          <li><a href="#s3">Завършване и удостоверяване</a></li>
+          <li><a href="#s4">Подбор на преподаватели</a></li>
+          <li><a href="#s5">Материална база</a></li>
+          <li><a href="#s6">Информационно осигуряване и архив</a></li>
+          <li><a href="#s7">Актуализиране на документацията</a></li>
+          <li><a href="#s8">Поддържане на данни в НАПОО</a></li>
+        </ol>
+      </aside>
+
+      <div>
+        <article class="mgmt-section r" id="s1">
+          <h2>Управление на <em>центъра</em>.</h2>
+          <p>
+            Центърът за професионално обучение към <b>„Образователен клъстер – Европа“ ЕООД</b> осъществява дейността си съгласно Правилника за устройството и дейността на ЦПО. Органи за управление на центъра са директорът на ЦПО и Учебно-методическият съвет.
+          </p>
+          <p>
+            Директорът организира, ръководи и контролира цялостната дейност на центъра, утвърждава вътрешната организация на обучението, координира работата на преподавателите, отговаря за воденето на учебната документация и за спазването на нормативните изисквания при провеждане и удостоверяване на професионалното обучение.
+          </p>
+          <p>
+            Учебно-методическият съвет подпомага директора при разработването и обсъждането на учебни планове и учебни програми, организацията на обучението, самооценяването и мерките за повишаване качеството на обучението.
+          </p>
+        </article>
+
+        <article class="mgmt-section r" id="s2">
+          <h2>Организация на процеса на <em>обучение</em>.</h2>
+          <p>
+            Професионалното обучение в ЦПО се организира по заявените за лицензиране професии и степени на професионална квалификация въз основа на учебни планове и учебни програми, разработени в съответствие със <b>ЗПОО</b>, рамковите програми и държавните образователни стандарти за придобиване на квалификация по съответните професии.
+          </p>
+          <p>
+            Обучението се провежда в теоретична и практическа част, в учебни кабинети и/или в реална работна среда, съобразно спецификата на професията и изискванията на учебната документация.
+          </p>
+          <p>
+            За всяка група се изготвят график, разпределение на учебните часове, определят се преподаватели по теория и практика и се води изискуемата учебна документация.
+          </p>
+        </article>
+
+        <article class="mgmt-section r" id="s3">
+          <h2>Завършване и <em>удостоверяване</em> на обучението.</h2>
+          <p>
+            Професионалното обучение завършва след изпълнение на учебния план и учебната програма по съответната професия и степен на професионална квалификация, включително предвидения хорариум по теория и практика.
+          </p>
+          <p>
+            Допускането до изпити и провеждането на изпитите се осъществяват по реда на действащата нормативна уредба и вътрешните правила на ЦПО.
+          </p>
+          <p>
+            На успешно завършилите обучаеми ЦПО издава документи за професионално обучение или професионална квалификация по утвърдените образци, като издадените документи се регистрират и съхраняват по установения ред.
+          </p>
+        </article>
+
+        <article class="mgmt-section r" id="s4">
+          <h2>Подбор на <em>преподаватели</em>.</h2>
+          <p>
+            Подборът на преподавателите в ЦПО се извършва съобразно изискванията на Закона за професионалното образование и обучение, държавните образователни стандарти за придобиване на квалификация по съответните професии и вътрешните правила на центъра.
+          </p>
+          <p>
+            За преподаватели по теория и практика се подбират лица, които притежават необходимото образование, професионална квалификация, професионален опит и компетентности, съответстващи на професията, специалността и степента на професионална квалификация, по които ще обучават.
+          </p>
+        </article>
+
+        <article class="mgmt-section r" id="s5">
+          <h2>Материална <em>база</em>.</h2>
+          <p>
+            ЦПО осигурява материална база за провеждане на обучението по теория и практика, съответстваща на изискванията на държавните образователни стандарти за придобиване на квалификация по съответната професия и специалност.
+          </p>
+          <p>
+            <b>Обучението по теория</b> се провежда в учебни кабинети, оборудвани с работни места за обучаемите и преподавателя, учебни маси и столове, бяла дъска или флипчарт, мултимедия, компютърна техника, интернет достъп и необходимите учебни материали и технически средства.
+          </p>
+          <p>
+            <b>Обучението по практика</b> се организира в собствена или предоставена материално-техническа база, включително специализирани помещения, работни места, оборудване, инструменти, софтуер, консумативи и други ресурси, необходими за формиране на практически умения.
+          </p>
+        </article>
+
+        <article class="mgmt-section r" id="s6">
+          <h2>Информационно осигуряване и <em>архив</em>.</h2>
+          <p>
+            ЦПО осигурява водене, съхраняване и поддържане на задължителната учебна документация и архив в съответствие с приложимите изисквания и вътрешните правила на центъра.
+          </p>
+          <p>
+            В центъра се създават, обработват, съхраняват и архивират документи, свързани с организацията и провеждането на обучението, включително учебни планове и програми, графици, дневници на групи, присъствени форми, изпитни протоколи, регистрационни книги, документи на обучаемите и издадени документи за професионално обучение и професионална квалификация.
+          </p>
+        </article>
+
+        <article class="mgmt-section r" id="s7">
+          <h2>Актуализиране на учебната <em>документация</em>.</h2>
+          <p>
+            Учебните планове и учебните програми в ЦПО се разработват и актуализират в съответствие със ЗПОО, рамковите програми за професионално образование и обучение и държавните образователни стандарти за придобиване на квалификация по съответните професии.
+          </p>
+          <p>
+            Актуализирането се извършва при промяна в нормативната уредба, при утвърждаване на нов или изменен държавен образователен стандарт, при промяна в Списъка на професиите за професионално образование и обучение, както и при необходимост от подобряване съдържанието и организацията на обучението.
+          </p>
+        </article>
+
+        <article class="mgmt-section r" id="s8">
+          <h2>Поддържане на актуални данни в <em>НАПОО</em>.</h2>
+          <p>
+            ЦПО поддържа актуални данни за своята дейност и за провежданите обучения в информационната система на НАПОО в съответствие с нормативните изисквания и указанията на агенцията.
+          </p>
+          <p>
+            В системата своевременно се въвеждат и актуализират данни за обучаващата институция, професиите и специалностите, учебната документация, преподавателите, материалната база, обучаемите и издадените документи, когато това се изисква от приложимия ред.
+          </p>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec-sm">
+  <div class="wrap">
+    <div class="cta-block r">
+      <div>
+        <span class="eyebrow eyebrow--light">Следваща стъпка</span>
+        <h2 style="margin-top:12px">Качество на<br/><em>обучението.</em></h2>
+        <p>Вижте как ЦПО проследява и поддържа качеството на провежданите обучения.</p>
+      </div>
+      <div class="cta-block__actions">
+        <a href="kachestvo.html" class="btn btn--primary">Качество на обучението <span class="arrow">→</span></a>
+        <a href="dokumenti.html" class="btn btn--ghost-light">Документи</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+<script>window.SITE_BASE = './';</script>
+<script src="assets/site.js"></script>
+</body>
+</html>
