@@ -216,14 +216,17 @@ section.sec-sm{ padding: var(--pad-sec-sm) 0 }
 }
 .nav__links a:hover{ opacity: 1; background: rgba(0,68,77,.05) }
 .nav__links a.active{ opacity: 1; color: var(--brand-deep); background: rgba(54,199,165,.12) }
-.nav__cta{ display:flex; align-items:center; gap: 10px }
+.nav__cta{ display:flex; align-items:center; gap: 10px; flex-wrap: nowrap }
+.nav__cta > *{ flex-shrink: 0 }
 .nav__menu-btn{
   display:flex; align-items:center; gap: 8px;
   padding: 10px 16px; border-radius: 999px;
   border: 1.5px solid var(--line-strong);
   font-size: 13px; font-weight: 500; color: var(--ink);
+  white-space: nowrap;
   transition: background .2s, border-color .2s;
 }
+.menu-label{ white-space: nowrap }
 .nav__menu-btn:hover{ background: rgba(0,68,77,.05); border-color: var(--ink) }
 .nav__menu-btn .bars{
   display:flex; flex-direction:column; gap: 3px;
@@ -241,6 +244,8 @@ section.sec-sm{ padding: var(--pad-sec-sm) 0 }
   font-size: 12px;
   letter-spacing: .08em;
   line-height: 1;
+  flex-wrap: nowrap;
+  white-space: nowrap;
 }
 .lang-switch button{
   background: none;
@@ -890,10 +895,13 @@ body{ word-break: break-word; overflow-wrap: break-word }
   .menu-overlay__aside .contact-block{ font-size: 18px }
 }
 
-/* Nav: hide "Меню" text on very small screens, show bars only */
-@media (max-width: 380px){
+/* Nav: hide "Меню" text on small phones (incl. iPhone 12/13 Pro @ 390px), show bars only */
+@media (max-width: 440px){
   .menu-label{ display: none }
   .logo__img{ height: 28px }
+  .nav__cta{ gap: 8px }
+  .nav__menu-btn{ padding: 8px 12px }
+  .lang-switch{ font-size: 11px; gap: 5px }
 }
 
 /* Directory: tighter rows on small phones */
