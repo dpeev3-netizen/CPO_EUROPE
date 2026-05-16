@@ -32,6 +32,17 @@
   const isSubProfession = path.includes('/profesii/');
   if (isSubProfession) current = 'profesii.html';
 
+  /* ---------- LANGUAGE SWITCH ---------- */
+  const langSwitchHTML = `
+    <div class="lang-switch notranslate" translate="no">
+      <button type="button" data-lang="bg" aria-label="Български">BG</button>
+      <span class="lang-switch__sep" aria-hidden="true">|</span>
+      <button type="button" data-lang="en" aria-label="English">EN</button>
+      <span class="lang-switch__sep" aria-hidden="true">|</span>
+      <button type="button" data-lang="it" aria-label="Italiano">IT</button>
+    </div>
+  `;
+
   /* ---------- NAV ---------- */
   const navHTML = `
     <nav class="nav" id="nav">
@@ -40,6 +51,7 @@
           <img src="${BASE}logo_dark.png" alt="ЦПО Европа" class="logo__img">
         </a>
         <div class="nav__cta">
+          ${langSwitchHTML}
           <a href="${BASE}kontakti.html#contact-form" class="btn btn--sm hide-mobile">Запитване <span class="arrow">→</span></a>
           <button class="nav__menu-btn" id="menuOpen" aria-label="Меню">
             <span class="bars" aria-hidden="true"><span></span><span></span><span></span></span>
@@ -57,6 +69,7 @@
         <a href="${BASE}index.html" class="logo">
           <img src="${BASE}logo_light.png" alt="ЦПО Европа" class="logo__img">
         </a>
+        ${langSwitchHTML}
         <button class="menu-overlay__close" id="menuClose" aria-label="Затвори меню">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 5l14 14M19 5L5 19"/></svg>
         </button>
@@ -146,6 +159,64 @@
   const footerSlot = document.getElementById('site-footer');
   if (navSlot) navSlot.innerHTML = navHTML + overlayHTML;
   if (footerSlot) footerSlot.innerHTML = footerHTML;
+
+  /* ---------- LANGUAGE: Google Translate (hidden) ---------- */
+  const savedLang = localStorage.getItem('siteLang') || 'bg';
+  const updateActiveLangButton = (lang) => {
+    document.querySelectorAll('.lang-switch button[data-lang]').forEach(b => {
+      b.classList.toggle('active', b.dataset.lang === lang);
+    });
+  };
+  updateActiveLangButton(savedLang);
+
+  const gtHost = document.createElement('div');
+  gtHost.id = 'google_translate_element';
+  gtHost.style.cssText = 'position:absolute;left:-9999px;top:-9999px;width:1px;height:1px;overflow:hidden';
+  document.body.appendChild(gtHost);
+
+  window.googleTranslateElementInit = function() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'bg',
+      includedLanguages: 'en,it,bg',
+      autoDisplay: false
+    }, 'google_translate_element');
+    if (savedLang && savedLang !== 'bg') applyTranslateLang(savedLang);
+  };
+
+  const gtScript = document.createElement('script');
+  gtScript.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+  gtScript.async = true;
+  document.body.appendChild(gtScript);
+
+  function applyTranslateLang(lang) {
+    let tries = 0;
+    const id = setInterval(() => {
+      const combo = document.querySelector('.goog-te-combo');
+      if (combo) {
+        combo.value = lang;
+        combo.dispatchEvent(new Event('change'));
+        clearInterval(id);
+      } else if (++tries > 60) {
+        clearInterval(id);
+      }
+    }, 100);
+  }
+
+  document.addEventListener('click', (e) => {
+    const btn = e.target.closest('.lang-switch button[data-lang]');
+    if (!btn) return;
+    const lang = btn.dataset.lang;
+    const current = localStorage.getItem('siteLang') || 'bg';
+    if (lang === current) return;
+    if (lang === 'bg') {
+      localStorage.removeItem('siteLang');
+      window.location.reload();
+      return;
+    }
+    localStorage.setItem('siteLang', lang);
+    updateActiveLangButton(lang);
+    applyTranslateLang(lang);
+  });
 
   /* ---------- Behaviors ---------- */
   const nav = document.getElementById('nav');
