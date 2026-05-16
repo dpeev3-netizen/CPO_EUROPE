@@ -169,6 +169,19 @@
   };
   updateActiveLangButton(savedLang);
 
+  function clearGoogtransCookie() {
+    const host = window.location.hostname;
+    const past = 'expires=Thu, 01 Jan 1970 00:00:00 GMT';
+    document.cookie = `googtrans=; path=/; ${past}`;
+    if (host) {
+      document.cookie = `googtrans=; path=/; domain=${host}; ${past}`;
+      document.cookie = `googtrans=; path=/; domain=.${host}; ${past}`;
+    }
+  }
+
+  // If user is back to BG, make sure no stale cookie auto-translates on load
+  if (savedLang === 'bg') clearGoogtransCookie();
+
   const gtHost = document.createElement('div');
   gtHost.id = 'google_translate_element';
   gtHost.style.cssText = 'position:absolute;left:-9999px;top:-9999px;width:1px;height:1px;overflow:hidden';
@@ -188,18 +201,32 @@
   gtScript.async = true;
   document.body.appendChild(gtScript);
 
-  function applyTranslateLang(lang) {
+  function withCombo(fn) {
     let tries = 0;
     const id = setInterval(() => {
       const combo = document.querySelector('.goog-te-combo');
       if (combo) {
-        combo.value = lang;
-        combo.dispatchEvent(new Event('change'));
+        fn(combo);
         clearInterval(id);
       } else if (++tries > 60) {
         clearInterval(id);
       }
     }, 100);
+  }
+
+  function applyTranslateLang(lang) {
+    withCombo(combo => {
+      combo.value = lang;
+      combo.dispatchEvent(new Event('change'));
+    });
+  }
+
+  function revertToSource() {
+    clearGoogtransCookie();
+    withCombo(combo => {
+      combo.value = '';
+      combo.dispatchEvent(new Event('change'));
+    });
   }
 
   document.addEventListener('click', (e) => {
@@ -210,7 +237,8 @@
     if (lang === current) return;
     if (lang === 'bg') {
       localStorage.removeItem('siteLang');
-      window.location.reload();
+      updateActiveLangButton('bg');
+      revertToSource();
       return;
     }
     localStorage.setItem('siteLang', lang);
