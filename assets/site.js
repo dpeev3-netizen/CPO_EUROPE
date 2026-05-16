@@ -170,12 +170,19 @@
   updateActiveLangButton(savedLang);
 
   function clearGoogtransCookie() {
-    const host = window.location.hostname;
     const past = 'expires=Thu, 01 Jan 1970 00:00:00 GMT';
+    const host = window.location.hostname;
+    document.cookie = `googtrans=; ${past}`;
     document.cookie = `googtrans=; path=/; ${past}`;
     if (host) {
       document.cookie = `googtrans=; path=/; domain=${host}; ${past}`;
       document.cookie = `googtrans=; path=/; domain=.${host}; ${past}`;
+      const parts = host.split('.');
+      if (parts.length > 2) {
+        const base = parts.slice(-2).join('.');
+        document.cookie = `googtrans=; path=/; domain=${base}; ${past}`;
+        document.cookie = `googtrans=; path=/; domain=.${base}; ${past}`;
+      }
     }
   }
 
@@ -221,14 +228,6 @@
     });
   }
 
-  function revertToSource() {
-    clearGoogtransCookie();
-    withCombo(combo => {
-      combo.value = '';
-      combo.dispatchEvent(new Event('change'));
-    });
-  }
-
   document.addEventListener('click', (e) => {
     const btn = e.target.closest('.lang-switch button[data-lang]');
     if (!btn) return;
@@ -236,9 +235,9 @@
     const current = localStorage.getItem('siteLang') || 'bg';
     if (lang === current) return;
     if (lang === 'bg') {
+      clearGoogtransCookie();
       localStorage.removeItem('siteLang');
-      updateActiveLangButton('bg');
-      revertToSource();
+      window.location.reload();
       return;
     }
     localStorage.setItem('siteLang', lang);
