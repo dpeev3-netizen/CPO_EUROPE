@@ -150,6 +150,9 @@
             <a href="${BASE}dokumenti.html#biskvitki">Политика за бисквитки</a>
           </div>
         </div>
+        <div class="footer__credit">
+          Уебсайт от <a href="https://adaptica-ai.com/" target="_blank" rel="noopener noreferrer" class="notranslate" translate="no">ADAPTICA AI</a>
+        </div>
       </div>
     </footer>
   `;

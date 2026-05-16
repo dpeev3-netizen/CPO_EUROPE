@@ -786,6 +786,22 @@ footer .footer__intro{
 }
 .footer__bot a:hover{ color: #fff }
 .footer__bot__links{ display:flex; gap: 24px }
+.footer__credit{
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,.06);
+  text-align: center;
+  color: rgba(255,255,255,.4);
+  font-family:'JetBrains Mono', monospace;
+  font-size: 11px; letter-spacing: .12em;
+}
+.footer__credit a{
+  color: rgba(255,255,255,.7);
+  font-weight: 600;
+  letter-spacing: .14em;
+  transition: color .2s;
+}
+.footer__credit a:hover{ color: var(--brand) }
 
 /* ============================================================
    REVEAL
