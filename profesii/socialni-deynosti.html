@@ -41,6 +41,11 @@
     align-items: end;
   }
   @media (max-width: 900px){ .prof-hero__grid{ grid-template-columns:1fr; gap: 32px } }
+  @media (max-width: 900px){
+    .prof-hero__top{ justify-content: center; text-align: center }
+    .prof-hero__top > span[style*="flex"]{ display: none }
+    .prof-hero__grid > div > div{ justify-content: center }
+  }
   .prof-hero h1{ margin-top: 12px }
   .prof-hero .lead{ margin-top: 24px; max-width: 540px; font-size: clamp(16px, 1.3vw, 18px); color: var(--muted) }
   .prof-side{
