@@ -19,6 +19,7 @@
     background: var(--bone); border:1px solid var(--line);
     border-radius: var(--r-lg); padding: 24px;
   }
+  @media (max-width: 900px){ .toc{ position: static; top: auto } }
   .toc h5{ font-family:'JetBrains Mono', monospace; font-size:10px; letter-spacing:.16em; text-transform:uppercase; color: var(--brand-deep); margin-bottom:14px; font-weight:500 }
   .toc ol{ list-style:none; counter-reset: tocn; display:grid; gap:2px }
   .toc li{ counter-increment: tocn }
