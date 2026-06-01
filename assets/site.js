@@ -40,6 +40,8 @@
       <button type="button" data-lang="en" aria-label="English">EN</button>
       <span class="lang-switch__sep" aria-hidden="true">|</span>
       <button type="button" data-lang="it" aria-label="Italiano">IT</button>
+      <span class="lang-switch__sep" aria-hidden="true">|</span>
+      <button type="button" data-lang="de" aria-label="Deutsch">DE</button>
     </div>
   `;
 
@@ -200,7 +202,7 @@
   window.googleTranslateElementInit = function() {
     new google.translate.TranslateElement({
       pageLanguage: 'bg',
-      includedLanguages: 'en,it,bg',
+      includedLanguages: 'en,it,de,bg',
       autoDisplay: false
     }, 'google_translate_element');
     if (savedLang && savedLang !== 'bg') applyTranslateLang(savedLang);
