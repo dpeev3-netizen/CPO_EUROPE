@@ -22,7 +22,23 @@
 <header class="hero-home" data-screen-label="01 Home Hero">
   <style>
     .hero-home{ padding: calc(var(--nav-h) + clamp(48px, 7vw, 96px)) 0 clamp(56px, 8vw, 96px); position:relative; overflow:hidden }
-    .hero-home__meta{ display:flex; justify-content:center; gap:16px; flex-wrap:wrap; margin-bottom:32px; text-align:center }
+    .hero-home__meta{ display:flex; justify-content:center; gap:12px; flex-wrap:wrap; margin-bottom:32px; text-align:center; align-items:center }
+    .hero-meta-notice{
+      display:inline-flex; align-items:center; gap:8px;
+      padding: 6px 12px;
+      background: rgba(255,168,77,.10);
+      border: 1px solid rgba(255,168,77,.35);
+      border-radius: 999px;
+      font-family:'JetBrains Mono', ui-monospace, monospace;
+      font-size: 10.5px; letter-spacing: .12em;
+      text-transform: uppercase; font-weight: 500;
+      color: var(--ink);
+    }
+    .hero-meta-notice::before{
+      content: ""; width: 6px; height: 6px;
+      border-radius: 50%; background: var(--orange);
+      flex: none;
+    }
     .hero-home__inner{ max-width: 1400px; margin: 0 auto; text-align: center; display:flex; flex-direction:column; align-items:center }
     .hero-home h1{ max-width: 22ch; font-size: clamp(48px, 7vw, 104px) }
     .hero-home__sub{ margin-top: 28px; font-size: clamp(16px, 1.3vw, 18px); line-height:1.6; color: var(--muted); max-width: 620px }
@@ -37,6 +53,7 @@
   <div class="wrap">
     <div class="hero-home__meta">
       <span class="hero-meta-label">„Образователен клъстер – Европа" ЕООД · гр. София, р-н Средец, ул. Славянска 20</span>
+      <span class="hero-meta-notice" role="status">ЦПО-то е в процес на лицензиране</span>
     </div>
     <div class="hero-home__inner">
       <h1 class="r" data-d="1">
