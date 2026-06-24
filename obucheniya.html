@@ -142,6 +142,60 @@
     color: var(--muted); display: none;
   }
   .empty.show{ display: block }
+
+  /* Specialized / short-course card */
+  .spec-list{ display: grid; gap: 14px }
+  .spec-card{
+    display: block;
+    padding: clamp(28px, 3vw, 36px) clamp(24px, 3vw, 40px);
+    background: var(--bone);
+    border: 1px solid var(--line);
+    border-radius: var(--r-lg);
+    color: var(--ink);
+    transition: background .25s, border-color .25s, transform .25s;
+  }
+  .spec-card:hover{ background: #fff; border-color: var(--line-strong); transform: translateY(-2px) }
+  .spec-card__meta{
+    display: flex; gap: 14px; align-items: center;
+    justify-content: space-between; flex-wrap: wrap;
+    font-family:'JetBrains Mono', monospace;
+    font-size: 11px; letter-spacing: .14em;
+    text-transform: uppercase; color: var(--brand-deep);
+    margin-bottom: 14px;
+  }
+  .spec-card__tags{ display:flex; gap: 8px; flex-wrap: wrap }
+  .spec-card__tag{
+    padding: 5px 11px;
+    background: var(--mint);
+    border-radius: 999px;
+    color: var(--ink); font-weight: 500;
+    letter-spacing: .12em;
+  }
+  .spec-card__title{
+    font-family:'Alumni Sans'; font-weight: 600;
+    font-size: clamp(24px, 2vw, 32px);
+    text-transform: uppercase; letter-spacing: -.01em;
+    line-height: 1.1; color: var(--ink);
+    margin-bottom: 12px;
+  }
+  .spec-card__desc{
+    font-size: 15px; line-height: 1.6;
+    color: var(--muted); max-width: 720px;
+    margin-bottom: 18px;
+  }
+  .spec-card__cta{
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family:'JetBrains Mono', monospace;
+    font-size: 12px; letter-spacing: .14em;
+    text-transform: uppercase; color: var(--brand-deep);
+    font-weight: 500;
+  }
+  .spec-card__cta .arrow{ transition: transform .25s }
+  .spec-card:hover .spec-card__cta .arrow{ transform: translateX(4px) }
+  @media (max-width: 720px){
+    .spec-card{ text-align: center }
+    .spec-card__meta{ justify-content: center }
+  }
 </style>
 </head>
 <body>
@@ -196,6 +250,37 @@
 
     <div class="empty" id="empty">
       <p>Няма обучения, отговарящи на избраните филтри.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec-sm" data-screen-label="03 Specialized trainings">
+  <div class="wrap">
+    <div class="sec-head" style="margin-bottom: 32px">
+      <div class="sec-head__title r">
+        <span class="eyebrow">Краткосрочни обучения</span>
+        <h2>Специализирани<br/><em>курсове</em>.</h2>
+      </div>
+      <div class="sec-head__lead r" data-d="1">
+        <p class="lead">Кратки курсове, насочени към безопасна работа с машини и оборудване в реална работна среда. Издава се сертификат за участие.</p>
+      </div>
+    </div>
+
+    <div class="spec-list">
+      <a href="obucheniya/operator-brane-plodove.html" class="spec-card r">
+        <div class="spec-card__meta">
+          <span>Краткосрочно обучение</span>
+          <span class="spec-card__tags">
+            <span class="spec-card__tag">8 часа</span>
+            <span class="spec-card__tag">Сертификат</span>
+          </span>
+        </div>
+        <h3 class="spec-card__title">Оператор на машина за бране на плодове</h3>
+        <p class="spec-card__desc">Безопасна експлоатация на машина за бране на плодове — теоретично-технически модул (онлайн, 4 часа) и присъствена практика (4 часа). Програмата покрива нормативните и вътрешните изисквания за здраве и безопасност и добри земеделски практики.</p>
+        <span class="spec-card__cta">
+          Виж програмата <span class="arrow">→</span>
+        </span>
+      </a>
     </div>
   </div>
 </section>
