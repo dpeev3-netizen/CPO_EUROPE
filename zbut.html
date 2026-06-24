@@ -71,6 +71,17 @@
   }
   .risk--medium .topics li::before{ background: var(--orange) }
   .risk--high .topics li::before{ background: var(--red) }
+  .risk-callout{
+    margin-top: 20px;
+    padding: 18px 22px;
+    background: rgba(54,199,165,.08);
+    border-left: 3px solid var(--brand);
+    border-radius: 0 var(--r-md) var(--r-md) 0;
+    max-width: 700px;
+  }
+  .risk-callout p{ color: #fff; font-size: 15px; line-height: 1.6; margin: 0; max-width: none }
+  .risk-callout p + p{ margin-top: 8px; color: var(--muted-light); font-size: 14px }
+  .risk-callout b{ color: #fff; font-weight: 600 }
 </style>
 </head>
 <body>
@@ -104,6 +115,10 @@
           <p>
             Обучението е с продължителност 8 часа и се провежда в съответствие с Наредба № РД-07-2 от 16 декември 2009 г. Програмата е подходяща за нискорискови дейности, включително офис, административни, обслужващи и други сходни дейности. Обучението включва обща и специфична част, насочени към безопасна организация на работното място.
           </p>
+          <div class="risk-callout">
+            <p><b>Обучение по ЗБУТ за работници, извършващи административни, офисни, обслужващи и други нискорискови дейности.</b></p>
+            <p>Обучението е проведено съгласно Наредба № РД‑07‑2 от 16.12.2009 г. на МТСП за обучение и инструктаж по ЗБУТ.</p>
+          </div>
         </div>
       </div>
       <ul class="topics">
